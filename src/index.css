@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: radial-gradient(circle at center, #1e1b4b 0%, #050505 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Grain Effect */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: 50;
+}
+
+/* Neon Orb Effect */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
